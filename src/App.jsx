@@ -6,22 +6,22 @@ import "./App.css";
 
 const App = () => {
   const [tickets, setTickets] = useState([]);
-  const [users, setUsers] = useState([]); // New state for users
+  const [users, setUsers] = useState([]); 
   const [groupingOption, setGroupingOption] = useState("status");
   const [sortingOption, setSortingOption] = useState("priority");
 
-  // Fetch tickets and users data
+
   useEffect(() => {
-    // Fetch tickets
+  
     axios
       .get("https://api.quicksell.co/v1/internal/frontend-assignment")
-      .then((response) => setTickets(response.data.tickets)) // Access the `tickets` from API response
+      .then((response) => setTickets(response.data.tickets)) 
       .catch((error) => console.error("Error fetching tickets:", error));
 
-    // Fetch users
+
     axios
       .get("https://api.quicksell.co/v1/internal/frontend-assignment")
-      .then((response) => setUsers(response.data.users)) // Access the `users` from API response
+      .then((response) => setUsers(response.data.users)) 
       .catch((error) => console.error("Error fetching users:", error));
   }, []);
 
@@ -34,8 +34,8 @@ const App = () => {
         setSortingOption={setSortingOption}
       />
       <Board
-        tickets={tickets} // Passing the correct tickets array
-        users={users} // Passing the fetched users
+        tickets={tickets} 
+        users={users} 
         groupingOption={groupingOption}
         sortingOption={sortingOption}
       />

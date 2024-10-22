@@ -1,7 +1,8 @@
-// components/DisplayMenu.js
-import React, { useState } from "react"; // Import useState from React
+
+import React, { useState } from "react"; 
 import DisplayIcon from "../images/Display.svg";
 import DownIcon from '../images/down.svg'
+
 
 const DisplayMenu = ({
   groupingOption,
@@ -9,10 +10,10 @@ const DisplayMenu = ({
   sortingOption,
   setSortingOption,
 }) => {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to control dropdown visibility
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false); 
 
   const toggleDropdown = () => {
-    setIsDropdownOpen((prev) => !prev); // Toggle dropdown visibility
+    setIsDropdownOpen((prev) => !prev); 
   };
 
   return (
@@ -32,7 +33,7 @@ const DisplayMenu = ({
                 id="grouping"
                 value={groupingOption}
                 onChange={(e) => setGroupingOption(e.target.value)}
-                style={{ marginLeft: '10px' }} // Add spacing between label and select
+                style={{ marginLeft: '10px' }}
               >
                 <option value="status">Status</option>
                 <option value="user">User</option>
@@ -46,7 +47,7 @@ const DisplayMenu = ({
                 id="sorting"
                 value={sortingOption}
                 onChange={(e) => setSortingOption(e.target.value)}
-                style={{ marginLeft: '10px' }} // Add spacing between label and select
+                style={{ marginLeft: '10px' }} 
               >
                 <option value="priority">Priority</option>
                 <option value="title">Title</option>
